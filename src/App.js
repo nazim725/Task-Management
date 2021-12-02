@@ -1,23 +1,42 @@
 import logo from './logo.svg';
 import './App.css';
+import AddTask from './Components/AddTask/AddTask';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import InprogressTask from './Components/InprogressTask/InprogressTask';
+import CompleteTask from './Components/Completetask/CompleteTask';
+import Home from './Components/Home/Home';
+import Navigation from './Components/Navigation/Navigation';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ArchiveTask from './Components/ArchiveTask/ArchiveTask';
+import bg from '../src/images/sectionBg.png'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main" style={{background:`url(${bg})`,height:'700px' }}>
+      <Router>
+      <Navigation></Navigation>
+        <Switch>
+          <Route exact path='/'>
+            <Home></Home>
+          </Route>
+
+
+          <Route path="/addTask">
+            <AddTask></AddTask>
+          </Route>
+          <Route path="/inprogressTask">
+            <InprogressTask></InprogressTask>
+          </Route>
+          <Route path="/completeTask">
+            <CompleteTask></CompleteTask>
+          </Route>
+          <Route path="/archiveTask">
+           <ArchiveTask></ArchiveTask>
+          </Route>
+
+        </Switch>
+      </Router>
+
     </div>
   );
 }
