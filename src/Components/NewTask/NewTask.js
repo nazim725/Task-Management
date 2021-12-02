@@ -2,6 +2,7 @@ import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Task from '../Task/Task';
+import Zoom from 'react-reveal/Zoom';
 
 const NewTask = () => {
     const [tasks, setTasks] = React.useState([])
@@ -14,25 +15,27 @@ const NewTask = () => {
                 console.log(data)
             });
     }, [])
-   
+
     return (
-        <div className='mx-auto'>
-            <h1 className='text-center text-info my-4'>Assign New Task</h1>
-            <Dropdown className='text-center'>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Assign New Task
-                </Dropdown.Toggle>
+        <Zoom>
+            <div className='mx-auto'>
+                <h1 className='text-center text-info my-4'>Assign New Task</h1>
+                <Dropdown className='text-center'>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                        Assign New Task
+                    </Dropdown.Toggle>
 
-                <Dropdown.Menu>
-                    {tasks.map(taskItem =>
-                     <Link style={{textDecoration:'none',color:'blue'}} to={`/task/${taskItem._id}`}> <Dropdown.Item style={{color:'blue',backgroundColor:'gray', marginTop:'2px'}} href="#/action-1">{taskItem.title}</Dropdown.Item></Link>)
-                    }
-                    
-                </Dropdown.Menu>
-            </Dropdown>
+                    <Dropdown.Menu>
+                        {tasks.map(taskItem =>
+                            <Link style={{ textDecoration: 'none', color: 'blue' }} to={`/task/${taskItem._id}`}> <Dropdown.Item style={{ color: 'blue', backgroundColor: 'gray', marginTop: '2px' }} href="#/action-1">{taskItem.title}</Dropdown.Item></Link>)
+                        }
+
+                    </Dropdown.Menu>
+                </Dropdown>
 
 
-        </div>
+            </div>
+        </Zoom>
 
     );
 };

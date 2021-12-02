@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react';
 import { Col, Form, Row, Button, FloatingLabel } from 'react-bootstrap';
 import './AddTask.css'
+import Zoom from 'react-reveal/Zoom';
 
 const AddTask = () => {
     const titleRef = useRef();
@@ -36,6 +37,7 @@ const AddTask = () => {
         e.preventDefault();
     }
     return (
+        <Zoom>
         <div className="">
             <h2 className="my-4 text-center text-info">Create Task</h2>
             <Form className="w-50 mx-auto" onSubmit={handleAddtask}>
@@ -71,6 +73,7 @@ const AddTask = () => {
                 </Row>
             </Form>
         </div>
+        </Zoom>
     );
 };
 
