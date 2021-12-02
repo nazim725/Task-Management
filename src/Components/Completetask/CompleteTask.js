@@ -6,7 +6,7 @@ const CompleteTask = () => {
     const [tasks, setTasks] = React.useState([])
 
     React.useEffect(() => {
-        const url = `https://fierce-anchorage-33824.herokuapp.com/tasks`
+        const url = `https://fierce-anchorage-33824.herokuapp.com/subTasks`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -29,6 +29,7 @@ const CompleteTask = () => {
                         <th>Title</th>
                         <th>Description</th>
                         <th>Date</th>
+                        <th>subTask</th>
                         <th>Status</th>
 
 
@@ -40,6 +41,7 @@ const CompleteTask = () => {
                             <td className='text-info'>{taskItem.title}</td>
                             <td className='text-info'>{taskItem.description}</td>
                             <td className='text-info'>{taskItem.date}</td>
+                            <td className='text-info'>{taskItem.subTask}</td>
                             <td className='text-info'>{taskItem.status}</td>
 
 

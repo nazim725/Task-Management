@@ -5,7 +5,7 @@ import Task from '../Task/Task';
 const ArchiveTask = () => {
     const [tasks, setTasks] = React.useState([])
     React.useEffect(() => {
-        const url = `https://fierce-anchorage-33824.herokuapp.com/tasks`
+        const url = `https://fierce-anchorage-33824.herokuapp.com/subTasks`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -23,6 +23,7 @@ const ArchiveTask = () => {
                         <th>Title</th>
                         <th>Description</th>
                         <th>Date</th>
+                        <th>Sub Task</th>
                         <th>Status</th>
 
 
@@ -34,7 +35,8 @@ const ArchiveTask = () => {
                             <td className='text-info'>{taskItem.title}</td>
                             <td className='text-info'>{taskItem.description}</td>
                             <td className='text-info'>{taskItem.date}</td>
-                            <td className='text-info'>{taskItem.status}</td>
+                            <td className='text-info'>{taskItem.date}</td>
+                            <td className='text-info'>{taskItem.subTask}</td>
 
 
 

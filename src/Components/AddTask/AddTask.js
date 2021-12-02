@@ -47,9 +47,9 @@ const AddTask = () => {
 
                 <Row>
                     <Col>
-                        <FloatingLabel controlId="floatingTextarea2" className="text-secondary " label="Description">
+                        <FloatingLabel controlId="floatingTextarea2" className="text-secondary text-center !important" label="Description">
                             <Form.Control
-                                className="text-center mt-3 input-box text-secondary text-center"
+                                className="text-center mt-3 input-box text-secondary"
                                 as="textarea"
                                 ref={descriptionRef}
                                 // placeholder="Description"

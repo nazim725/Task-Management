@@ -12,7 +12,7 @@ const Navigation = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
-                            <Nav.Link as={NavLink} to="/addTask">Add Task</Nav.Link>
+                            <Nav.Link as={NavLink} to="/newTask">New Task</Nav.Link>
                             <Nav.Link as={NavLink} to="/inprogressTask">InprogressTask</Nav.Link>
                             <Nav.Link as={NavLink} to="/completeTask">Complete Task</Nav.Link>
                             <Nav.Link as={NavLink} to="/archiveTask">Archive Task</Nav.Link>

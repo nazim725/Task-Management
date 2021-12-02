@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ArchiveTask from './Components/ArchiveTask/ArchiveTask';
 import bg from '../src/images/sectionBg.png'
 import NewTask from './Components/NewTask/NewTask';
+import Task from './Components/Task/Task';
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
           </Route>
           <Route path="/newTask">
             <NewTask></NewTask>
+          </Route>
+
+          <Route path='/task/:taskId'>
+            <Task></Task>
           </Route>
 
         </Switch>
