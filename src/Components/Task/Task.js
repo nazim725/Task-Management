@@ -5,7 +5,7 @@ const Task = ({ task,setTasks,tasks }) => {
     const [complete, setComplete] = React.useState(false)
     const [status, setStatus] = React.useState('');
     const handleChangedStatus = id => {
-        const url = `http://localhost:5000/tasks/${_id}`
+        const url = `https://fierce-anchorage-33824.herokuapp.com/tasks/${_id}`
         // console.log(id)
         console.log(url)
         fetch(url, {

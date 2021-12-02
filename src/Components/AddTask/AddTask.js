@@ -1,6 +1,6 @@
 
 import React, { useRef, useState } from 'react';
-import { Col, Form, Row, Button } from 'react-bootstrap';
+import { Col, Form, Row, Button, FloatingLabel } from 'react-bootstrap';
 import './AddTask.css'
 
 const AddTask = () => {
@@ -15,7 +15,7 @@ const AddTask = () => {
         const date = dateRef.current.value;
         const newTask = { title, description, date }
         console.log(newTask)
-        fetch('http://localhost:5000/tasks', {
+        fetch('https://fierce-anchorage-33824.herokuapp.com/tasks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,12 +41,22 @@ const AddTask = () => {
             <Form className="w-50 mx-auto" onSubmit={handleAddtask}>
                 <Row className="">
                     <Col>
-                        <Form.Control className="text-center mt-3 input-box" ref={titleRef} placeholder="Task title" required />
+                        <Form.Control className="text-center mt-3 input-box text-secondary" ref={titleRef} placeholder="Task title" required />
                     </Col>
                 </Row>
-                <Row className="">
+
+                <Row>
                     <Col>
-                        <Form.Control className="text-center mt-3 input-box" ref={descriptionRef} placeholder="Description" required />
+                        <FloatingLabel controlId="floatingTextarea2" className="text-secondary " label="Description">
+                            <Form.Control
+                                className="text-center mt-3 input-box text-secondary text-center"
+                                as="textarea"
+                                ref={descriptionRef}
+                                // placeholder="Description"
+                                required
+                                style={{ height: '100px' }}
+                            />
+                        </FloatingLabel>
                     </Col>
                 </Row>
                 <Row className="">

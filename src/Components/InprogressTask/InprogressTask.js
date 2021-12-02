@@ -7,7 +7,7 @@ const InprogressTask = () => {
     const [tasks, setTasks] = useState([])
     const [status, setStatus] = React.useState('');
     useEffect(() => {
-        fetch('http://localhost:5000/tasks')
+        fetch('https://fierce-anchorage-33824.herokuapp.com/tasks')
             .then(res => res.json())
             .then(data => {
                 setTasks(data)
@@ -18,7 +18,7 @@ const InprogressTask = () => {
 
 
     const handleChangedStatus = id => {
-        const url = `http://localhost:5000/tasks/${id}`
+        const url = `https://fierce-anchorage-33824.herokuapp.com/tasks/${id}`
         // console.log(id)
         console.log(url)
         fetch(url, {
@@ -71,7 +71,7 @@ const InprogressTask = () => {
                             <td className='text-info text-center'>
                                 <select className="bg-success text-light" style={{ height: '35px', borderRadius: '5px', paddingBottom: '5px' }} onChange={e => setStatus(e.target.value)}>
                                     <option className='text-white' value="Select" disabled selected>Select Status</option>
-                                    <option value="completed">Complete</option>
+                                    <option value="complete">Complete</option>
                                     <option value="notCompleted">not Complete</option>
                                     <option value="Rejected">Rejected</option>
                                 </select>

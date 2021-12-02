@@ -5,7 +5,7 @@ import Task from '../Task/Task';
 const ArchiveTask = () => {
     const [tasks, setTasks] = React.useState([])
     React.useEffect(() => {
-        const url = `http://localhost:5000/tasks`
+        const url = `https://fierce-anchorage-33824.herokuapp.com/tasks`
         fetch(url)
             .then(res => res.json())
             .then(data => {

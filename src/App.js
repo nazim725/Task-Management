@@ -9,14 +9,18 @@ import Navigation from './Components/Navigation/Navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ArchiveTask from './Components/ArchiveTask/ArchiveTask';
 import bg from '../src/images/sectionBg.png'
+import NewTask from './Components/NewTask/NewTask';
 
 function App() {
   return (
-    <div className="main" style={{background:`url(${bg})`,height:'700px' }}>
+    <div className="main" style={{ background: `url(${bg})`, height: '700px' }}>
       <Router>
-      <Navigation></Navigation>
+        <Navigation></Navigation>
         <Switch>
           <Route exact path='/'>
+            <Home></Home>
+          </Route>
+          <Route exact path='/home'>
             <Home></Home>
           </Route>
 
@@ -31,7 +35,10 @@ function App() {
             <CompleteTask></CompleteTask>
           </Route>
           <Route path="/archiveTask">
-           <ArchiveTask></ArchiveTask>
+            <ArchiveTask></ArchiveTask>
+          </Route>
+          <Route path="/newTask">
+            <NewTask></NewTask>
           </Route>
 
         </Switch>
