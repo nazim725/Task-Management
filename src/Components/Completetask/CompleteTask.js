@@ -27,6 +27,7 @@ const CompleteTask = () => {
                             <th>Description</th>
                             <th>Date</th>
                             <th>subTask</th>
+                            <th>Employee Name</th>
                             <th>Status</th>
 
 
@@ -39,6 +40,7 @@ const CompleteTask = () => {
                                 <td className='text-info'>{taskItem.description}</td>
                                 <td className='text-info'>{taskItem.date}</td>
                                 <td className='text-info'>{taskItem.subTask}</td>
+                                <td className='text-info'>{taskItem.employeeName}</td>
                                 <td className='text-info'>{taskItem.status}</td>
 
 
